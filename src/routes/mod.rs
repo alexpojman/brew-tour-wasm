@@ -3,9 +3,11 @@ use yew_router::prelude::*;
 
 pub mod about;
 pub mod home;
+pub mod not_found;
 
 use about::About;
 use home::Home;
+use not_found::NotFound;
 
 /// App routes
 #[derive(Routable, Debug, Clone, PartialEq)]
@@ -24,6 +26,6 @@ pub fn switch(routes: &AppRoute) -> Html {
     match routes.clone() {
         AppRoute::Home => html! { <Home /> },
         AppRoute::About => html! { <About /> },
-        AppRoute::PageNotFound => html! { "Page not found" },
+        AppRoute::PageNotFound => html! { <NotFound /> },
     }
 }
